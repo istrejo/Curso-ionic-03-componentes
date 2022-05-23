@@ -24,6 +24,10 @@ const routes: Routes = [
         (m) => m.ActionSheetPageModule
       ),
   },
+  {
+    path: 'avatar',
+    loadChildren: () => import('./pages/avatar/avatar.module').then( m => m.AvatarPageModule)
+  },
 ];
 
 @NgModule({
