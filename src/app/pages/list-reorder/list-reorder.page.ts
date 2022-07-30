@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemReorderEventDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-list-reorder',
@@ -14,6 +13,7 @@ export class ListReorderPage implements OnInit {
     'Wonder Woman',
     'Flash',
   ];
+  reorderDisabled: boolean = true;
 
   constructor() {}
 
@@ -22,11 +22,11 @@ export class ListReorderPage implements OnInit {
   // Método para controlar el reorder
   doReorder(event: any) {
     const movedItem = this.characters.splice(event.detail.from, 1)[0];
-
     this.characters.splice(event.detail.to, 0, movedItem);
-
     event.detail.complete();
+  }
 
-    console.log(this.characters);
+  toggleReorder() {
+    this.reorderDisabled = !this.reorderDisabled;
   }
 }
