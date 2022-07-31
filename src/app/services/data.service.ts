@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../core/models/user.interface';
 import { map } from 'rxjs/operators';
+import { Componente } from '../core/models/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +20,9 @@ export class DataService {
           })
         )
       );
+  }
+
+  getMenuOpts() {
+    return this.http.get<Componente[]>('/assets/data/menu-opts.json');
   }
 }
