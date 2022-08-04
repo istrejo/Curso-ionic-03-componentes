@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../core/models/user.interface';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 import { Album, Componente, Superhero } from '../core/models/interfaces';
 
 const USERS = 'https://jsonplaceholder.typicode.com/users';
@@ -33,6 +33,6 @@ export class DataService {
     return this.http.get<Componente[]>(OPTS);
   }
   getHeroes() {
-    return this.http.get<Superhero[]>(HEROES);
+    return this.http.get<Superhero[]>(HEROES).pipe(delay(2000));
   }
 }
