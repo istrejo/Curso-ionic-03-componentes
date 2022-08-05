@@ -118,6 +118,10 @@ const routes: Routes = [
     path: 'swiper',
     loadChildren: () => import('./pages/swiper/swiper.module').then( m => m.SwiperPageModule)
   },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
 
 ];
 

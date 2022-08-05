@@ -103,5 +103,10 @@
     "icon": "albums-outline",
     "name": "Swiper",
     "redirecTo": "/swiper"
+  },
+  {
+    "icon": "cog-outline",
+    "name": "Tabs",
+    "redirecTo": "/tabs"
   }
 ]
